@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/abril_fatface</item>
+        <item>@font/aguafina_script</item>
+        <item>@font/architects_daughter</item>
+        <item>@font/arizonia</item>
+        <item>@font/cedarville_cursive</item>
+        <item>@font/cherry_swash_bold</item>
+        <item>@font/clicker_script</item>
+        <item>@font/cookie</item>
+        <item>@font/dancing_script</item>
+        <item>@font/dawning_of_a_new_day</item>
+        <item>@font/dynalight</item>
+        <item>@font/flamenco</item>
+        <item>@font/grand_hotel</item>
+        <item>@font/great_vibes</item>
+        <item>@font/italianno</item>
+        <item>@font/josefin_slab_thin_italic</item>
+        <item>@font/league_script</item>
+        <item>@font/petit_formal_script</item>
+    </array>
+</resources>
