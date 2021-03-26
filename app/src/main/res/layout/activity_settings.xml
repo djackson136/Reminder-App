@@ -89,4 +89,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainSubtitle" />
+
+    <LinearLayout
+        android:id="@+id/navigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButtonList"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:paddingRight="15dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@android:drawable/ic_menu_agenda" />
+
+        <ImageButton
+            android:id="@+id/imageButtonSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@android:drawable/ic_menu_preferences" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
