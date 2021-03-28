@@ -13,37 +13,41 @@ import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter {
         private ArrayList<Reminder> reminderData;
-        private View.OnClickListener mOnItemClickListener;
+        // private View.OnClickListener mOnItemClickListener;
         private boolean isDeleting;
         private Context parentContext;
 
         public class ReminderViewHolder extends RecyclerView.ViewHolder {
 
-            public TextView textViewName;
-            public TextView textViewType;
-            public TextView textViewRating;
+            public TextView textViewSub;
+            public TextView textViewDesc;
+            public TextView textViewPriority;
+            public TextView textViewSaveDate;
             public Button deleteButton;
 
             public ReminderViewHolder(@NonNull View itemView) {
                 super(itemView);
-                textViewName = itemView.findViewById(R.id.textDescription);
-                textViewType = itemView.findViewById(R.id.textSubject);
-                textViewRating = itemView.findViewById(R.id.textSaveDate);
+                textViewSub = itemView.findViewById(R.id.textSubject);
+                textViewDesc = itemView.findViewById(R.id.textDescription);
+                textViewPriority = itemView.findViewById(R.id.textPriority);
+                textViewSaveDate = itemView.findViewById(R.id.textSaveDate);
                 deleteButton = itemView.findViewById(R.id.buttonDeleteMeal);
                 itemView.setTag(this);
-                itemView.setOnClickListener(mOnItemClickListener);
+                // itemView.setOnClickListener(mOnItemClickListener);
             }
 
-            public TextView getNameTextView() {
-                return textViewName;
+            public TextView getSubTextView() {
+                return textViewSub;
             }
 
-            public TextView getTypeTextView() {
-                return textViewType;
+            public TextView getDescTextView() {
+                return textViewDesc;
             }
 
-            public TextView getRatingTextView() {
-                return textViewRating;
+            public TextView getPriorityTextView() { return textViewPriority; }
+
+            public TextView getDateTextView() {
+                return textViewSaveDate;
             }
 
             public Button getDeleteButton() {
@@ -55,10 +59,12 @@ public class Adapter extends RecyclerView.Adapter {
             reminderData = arrayList;
             parentContext = context;
         }
-
+        
+        /*
         public void setOnItemClickListener(View.OnClickListener itemClickListener) {
             mOnItemClickListener = itemClickListener;
         }
+         */
 
         @NonNull
         @Override
@@ -71,9 +77,10 @@ public class Adapter extends RecyclerView.Adapter {
         @Override
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
             ReminderViewHolder rvh = (ReminderViewHolder) holder;
-            rvh.getNameTextView().setText(reminderData.get(position).getSubject());
-            rvh.getTypeTextView().setText(reminderData.get(position).getDescription());
-            rvh.getRatingTextView().setText(reminderData.get(position).getSaveDate());
+            rvh.getDescTextView().setText(reminderData.get(position).getSubject());
+            rvh.getSubTextView().setText(reminderData.get(position).getDescription());
+            rvh.getPriorityTextView().setText(reminderData.get(position).getPriority());
+            rvh.getDateTextView().setText(reminderData.get(position).getSaveDate());
 
             if (isDeleting) {
                 rvh.getDeleteButton().setVisibility(View.VISIBLE);

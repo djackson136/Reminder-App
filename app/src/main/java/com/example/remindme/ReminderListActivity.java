@@ -33,8 +33,8 @@ public class ReminderListActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        String sortBy = getSharedPreferences("ReminderPreferences", Context.MODE_PRIVATE).getString("sortfield", "datesaved");
-        String sortOrder = getSharedPreferences("ReminderPreferences", Context.MODE_PRIVATE).getString("sortorder", "ASC");
+        String sortBy = getSharedPreferences("MyReminderPreferences", Context.MODE_PRIVATE).getString("sortby", "subject");
+        String sortOrder = getSharedPreferences("MyReminderPreferences", Context.MODE_PRIVATE).getString("sortorder", "ASC");
         DataSource ds = new DataSource(this);
         try {
             ds.open();
@@ -46,7 +46,7 @@ public class ReminderListActivity extends AppCompatActivity {
                 reminderList.setLayoutManager(layoutManager);
                 reminderAdapter = new Adapter(reminders, ReminderListActivity.this);
                 reminderList.setAdapter(reminderAdapter);
-                reminderAdapter.setOnItemClickListener(onItemClickListener);
+                // reminderAdapter.setOnItemClickListener(onItemClickListener);
 
                 // Divider
                 RecyclerView.ItemDecoration divider = new DividerItemDecoration(ReminderListActivity.this, DividerItemDecoration.VERTICAL);
@@ -60,7 +60,7 @@ public class ReminderListActivity extends AppCompatActivity {
             Toast.makeText(this, "Error retrieving contacts", Toast.LENGTH_LONG).show();
         }
     }
-
+    /*
     private View.OnClickListener onItemClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -72,6 +72,7 @@ public class ReminderListActivity extends AppCompatActivity {
             startActivity(intent);
         }
     };
+     */
 
     private void initListButton() {
         ImageButton ibList = findViewById(R.id.imageButtonList);

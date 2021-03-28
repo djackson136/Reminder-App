@@ -31,14 +31,15 @@ public class DataSource {
 
                 initialValues.put("subject", r.getSubject());
                 initialValues.put("description", r.getDescription());
-                initialValues.put("date", r.getSaveDate());
+                initialValues.put("priority", r.getPriority());
+                initialValues.put("savedate", r.getSaveDate());
                 didSucceed = database.insert("reminders", null, initialValues) > 0;
             } catch (Exception e) {
                 // Do nothing - will return false if there is an exception
             }
             return didSucceed;
         }
-
+        /*
         public boolean updateReminder(Reminder r) {
             boolean didSucceed = false;
             try {
@@ -56,6 +57,7 @@ public class DataSource {
             }
             return didSucceed;
         }
+         */
 
 
         public int getLastReminderID() {
@@ -87,7 +89,8 @@ public class DataSource {
                     newReminder.setReminderID(cursor.getInt(0));
                     newReminder.setSubject(cursor.getString(1));
                     newReminder.setDescription(cursor.getString(2));
-                    newReminder.setSaveDate(cursor.getString(3));
+                    newReminder.setPriority(cursor.getString(3));
+                    newReminder.setSaveDate(cursor.getString(4));
 
                     reminders.add(newReminder);
                     cursor.moveToNext();
@@ -99,7 +102,7 @@ public class DataSource {
             }
             return reminders;
         }
-
+        /*
         public Reminder getSpecificReminder(int reminderId) {
             Reminder reminder = new Reminder();
             String query = "SELECT * FROM reminders WHERE _id =" + reminderId;
@@ -115,6 +118,7 @@ public class DataSource {
             }
             return reminder;
         }
+         */
 
         public boolean deleteReminder (int reminderId) {
             boolean didDelete = false;

@@ -10,5 +10,6 @@
     <color name="accent">#F4675D</color>
     <color name="system_transparent">#00000000</color>
     <color name="light_gray">#CDCECE</color>
+    <color name="dark_gray">#656565</color>
 
 </resources>

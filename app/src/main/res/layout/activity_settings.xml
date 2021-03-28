@@ -8,20 +8,13 @@
     tools:context=".SettingsActivity">
 
     <RadioGroup
-        android:id="@+id/sortRadioGroup"
+        android:id="@+id/sortByRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textSortBy">
-
-        <RadioButton
-            android:id="@+id/radioDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Date Saved"
-            android:textColor="@color/black" />
 
         <RadioButton
             android:id="@+id/radioSubject"
@@ -34,10 +27,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Priority" />
+
+        <RadioButton
+            android:id="@+id/radioDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date Saved"
+            android:textColor="@color/black" />
     </RadioGroup>
 
     <TextView
-        android:id="@+id/mainSubtitle"
+        android:id="@+id/textSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
@@ -46,11 +46,11 @@
         android:text="Me"
         android:textColor="@color/accent"
         android:textSize="70sp"
-        app:layout_constraintStart_toStartOf="@+id/mainTitle"
-        app:layout_constraintTop_toTopOf="@+id/mainTitle" />
+        app:layout_constraintStart_toStartOf="@+id/textTitle"
+        app:layout_constraintTop_toTopOf="@+id/textTitle" />
 
     <TextView
-        android:id="@+id/mainTitle"
+        android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -70,7 +70,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="18dp"
         android:fontFamily="sans-serif-light"
-        android:text="Sort By:"
+        android:text="Sort Reminders By:"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +88,7 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainSubtitle" />
+        app:layout_constraintTop_toBottomOf="@+id/textSubtitle" />
 
     <LinearLayout
         android:id="@+id/navigationBar"
@@ -116,5 +116,40 @@
             android:scaleType="fitCenter"
             app:srcCompat="@android:drawable/ic_menu_preferences" />
     </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/sortOrderRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSortOrder">
+
+        <RadioButton
+            android:id="@+id/radioASC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ascending" />
+
+        <RadioButton
+            android:id="@+id/radioDESC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descending" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textSortOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Sort Order:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sortByRadioGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,10 +7,10 @@ import android.util.Log;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "reminderslist.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     private static final String CREATE_TABLE_REMINDERS = "create table reminders (_id integer primary key autoincrement, " +
-            "subject text, description text);";
+            "subject text, description text, priority text, savedate text);";
 
     public DBHelper (Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

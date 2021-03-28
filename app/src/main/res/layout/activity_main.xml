@@ -33,6 +33,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <RadioGroup
+                android:id="@+id/priorityRadioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -40,7 +41,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/buttonSave"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textPriority">
+                app:layout_constraintTop_toBottomOf="@+id/textSelectPriority">
 
                 <RadioButton
                     android:id="@+id/lowButton"
@@ -66,7 +67,7 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/mainSubtitle"
+                android:id="@+id/textSubtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="104dp"
@@ -75,11 +76,11 @@
                 android:text="Me"
                 android:textColor="@color/accent"
                 android:textSize="70sp"
-                app:layout_constraintStart_toStartOf="@+id/mainTitle"
-                app:layout_constraintTop_toTopOf="@+id/mainTitle" />
+                app:layout_constraintStart_toStartOf="@+id/textTitle"
+                app:layout_constraintTop_toTopOf="@+id/textTitle" />
 
             <TextView
-                android:id="@+id/mainTitle"
+                android:id="@+id/textTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -93,7 +94,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textPriority"
+                android:id="@+id/textSelectPriority"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -114,10 +115,10 @@
                 android:hint="Subject"
                 android:inputType="textPersonName"
                 app:layout_constraintStart_toStartOf="@+id/editDescription"
-                app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+                app:layout_constraintTop_toBottomOf="@+id/textSetReminder" />
 
             <TextView
-                android:id="@+id/textTitle"
+                android:id="@+id/textSetReminder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -128,7 +129,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mainSubtitle" />
+                app:layout_constraintTop_toBottomOf="@+id/textSubtitle" />
 
             <EditText
                 android:id="@+id/editDescription"
